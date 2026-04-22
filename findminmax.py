@@ -7,20 +7,20 @@ class Solution:
     def getMinMax(self, arr):
         # code here
         n=len(arr)
-        if n%2==1:
-            min_e=arr[0]
-            max_e=arr[0]
-            i=1
-        else:
+        if n%2==0:
+            start=2            
             if arr[0]>arr[1]:
                 min_e=arr[1]
                 max_e=arr[0]
             else:
                 min_e=arr[0]
                 max_e=arr[1]
-            i=2
+        else:
+            start=1
+            min_e=arr[0]
+            max_e=arr[0]
             
-
+        i=start
         while(i<n):
             if (arr[i]>arr[i+1]):
                 min_e=min(min_e,arr[i+1])
